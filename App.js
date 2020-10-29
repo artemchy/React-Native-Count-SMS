@@ -13,7 +13,6 @@ export default function App() {
       }
       return acc;
     }, []);
-    // console.log(countSMS);
     setRequiredCount(countSMS.length);
   };
 
