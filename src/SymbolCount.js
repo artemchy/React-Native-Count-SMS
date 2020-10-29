@@ -19,11 +19,12 @@ export const SymbolCount = ({ requiredCount }) => {
         numberOfLines={10}
         multiline={true}
       ></TextInput>
-      <View style={{ marginTop: 15 }}>
+      <View style={styled.symbolCount}>
         <TextInput
           onChangeText={(count) => setTcount(count)}
-          style={styled.symbolCount}
+          style={styled.symbolCountInput}
         ></TextInput>
+        <Text style={styled.symbolCountText}>Символiв</Text>
       </View>
       <View style={{ alignItems: "center" }}>
         <TouchableOpacity
@@ -47,6 +48,11 @@ const styled = StyleSheet.create({
     paddingVertical: 40,
   },
   symbolCount: {
+    marginTop: 15,
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  symbolCountInput: {
     borderColor: "#ccc",
     borderStyle: "solid",
     borderWidth: 2,
@@ -55,6 +61,12 @@ const styled = StyleSheet.create({
     height: 50,
     paddingLeft: 10,
     fontSize: 30,
+  },
+  symbolCountText: {
+    fontSize: 22,
+    textTransform: "uppercase",
+    fontWeight: "500",
+    marginLeft: 20,
   },
   btn: {
     maxWidth: "70%",
