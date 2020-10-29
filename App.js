@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { SymbolCount } from "./src/SymbolCount";
 import { NeedCountSMS } from "./src/NeedCountSMS";
 
@@ -7,7 +7,7 @@ export default function App() {
   const [requiredCountSms, setRequiredCount] = useState();
   const requiredCountFordispatch = (text, countSymbols) => {
     const symbols = text.split("");
-    const countSMS = symbols.reduce((acc, el, i, arr) => {
+    const countSMS = symbols.reduce((acc, _, i, arr) => {
       if (i < Math.ceil(arr.length / countSymbols)) {
         acc[i] = arr.slice(i * countSymbols, i * countSymbols + countSymbols);
       }
